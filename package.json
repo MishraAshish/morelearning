@@ -1,0 +1,30 @@
+{
+  "name": "trainingsession",
+  "version": "1.0.0",
+  "description": "first set of node api",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "na"
+  },
+  "repository": {
+    "type": "git",
+    "url": "na"
+  },
+  "keywords": [
+    "trainees",
+    "jaya",
+    "robert",
+    "kar",
+    "tawin",
+    "duy"
+  ],
+  "author": "synergisticit trainer6",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {
+    "body-parser": "1.10.0",
+    "express": "4.16.4",
+    "mongoose": "5.4.17"
+  }
+}
