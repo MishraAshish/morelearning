@@ -4,9 +4,9 @@
   "description": "Creating a react application",
   "main": "index.js",
   "scripts": {
-    "test":  "nothing",
+    "test": "nothing",
     "start": "npm run build",
-    "build": "webpack -d && copy src\\index.html dist\\index.html && webpack-dev-server --port 3030 --content-base src/ --hot",    
+    "build": "webpack -d && copy src\\index.html dist\\index.html && webpack-dev-server --port 3030 --content-base src/ --hot history",
     "build:prod": "webpack -p && cp src/index.html dist/index.html"
   },
   "repository": {
@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "react": "16.7.0",
-    "react-dom": "16.7.0"
+    "react-dom": "16.7.0",
+    "react-router-dom": "4.3.1"
   }
 }
