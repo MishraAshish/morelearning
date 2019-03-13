@@ -1,17 +1,19 @@
 console.log("Test my application with --hot");
-import React, {Component, PureComponent} from "react";
-import Header, {Footer} from "./HeaderComponent";
+import React from "react";
+import Header, {Footer as Ftr, Body} from "./HeaderComponent";
 import {render} from "react-dom";
 
-class App extends Component{
+class App extends React.Component{//state
     constructor(){
         super();        
     }  
     render(){
-        return(
+        let myvar = true;
+        return(//JSX : Javascript XML
             <div>
-                <Header/>
-                <Footer/>
+                <Header/>                
+                {myvar ? <Body/> : ""}
+                <Ftr display={true} msg={"Message from Index Page"}/>
             </div>
         )
     }
