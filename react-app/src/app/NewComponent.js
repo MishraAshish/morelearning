@@ -12,22 +12,22 @@ class NewComponent extends Component{
         }    
 
         //ref keyword allows us to directly interact with dom
-        this.textInput = React.createRef();        
+        // this.textInput = React.createRef();        
     }
-    focusTextInput = () => {
-        // Explicitly focus the text input using the raw DOM API
-        // Note: we're accessing "current" to get the DOM node
-        console.log("We are setting focus on call!");
-        this.textInput.current.focus();
-    }
+    // focusTextInput = () => {
+    //     // Explicitly focus the text input using the raw DOM API
+    //     // Note: we're accessing "current" to get the DOM node
+    //     console.log("We are setting focus on call!");
+    //     this.textInput.current.focus();
+    // }
 
     render(){
         return(
             <div>
-                <div>           
+                {/* <div>           
                     <input type="text" ref={this.textInput} />
                     <input type="button" value="Focus the text input" onClick={this.focusTextInput}/>
-                </div>
+                </div> */}
                 <hr/>
 
                 <p>This is Your Changed Age : {this.props.user.age} </p>

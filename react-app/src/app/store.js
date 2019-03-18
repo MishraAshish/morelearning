@@ -12,7 +12,7 @@ const myLogger = () => (next) => (action) => {
 
 export default createStore(
     combineReducers({
-        user//, other
+        user
     }),
     {},
     applyMiddleware(myLogger, thunk, promise())

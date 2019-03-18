@@ -6,15 +6,10 @@ export function setAge(number){
 }
 
 export function setName(name){
-    return dispatch =>{
-        setTimeout( () => {
-            dispatch({
+    return {
                 type:"SET_NAME",
                 payload:name
-            })
-        }
-        ,3000);
-    }
+            }
     // return{
     //     type : "SET_NAME",
     //     payload: new Promise((resolve, reject) => {
