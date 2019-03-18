@@ -1,6 +1,6 @@
 import React, {Component} from "react";
-import {setAge, setName} from "../app/actions/useraction";
 import {connect} from "react-redux";
+import {setAge, setName} from "../app/actions/useraction";
 
 class NewComponent extends Component{
     constructor(props,context){ //props : immutable we can use it but can't modify
