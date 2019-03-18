@@ -2,7 +2,12 @@
 import React from "react";
 import Header, {Footer as Ftr, Body} from "./HeaderComponent";
 import User from "./UserComponent";
+import NewComponent from "./NewComponent";
+
 import {render} from "react-dom";
+import {Provider} from "react-redux";
+import store from "./store";
+
 
 class App extends React.Component{//state
     constructor(){
@@ -33,12 +38,16 @@ class App extends React.Component{//state
                 {myvar ? <Body/> : ""}
                 <User greetFunc={this.greetMe} prp3={this.state.parentprop}/>
                 <Ftr display={true} msg={"Message from Index Page"}/>
-
                 <hr/>
                 <button onClick={() => this.updateProp()}>Update Parent Props</button>
+                <hr/>
+                <NewComponent/>
             </div>            
         )
     }
 }
 
-render(<App/>, document.getElementById("app"))
+render(<Provider store={store}>
+        <App/>
+    </Provider>, 
+    document.getElementById("app"))
