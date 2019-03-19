@@ -3,7 +3,7 @@ import React from "react";
 import Header, {Footer as Ftr, Body} from "./HeaderComponent";
 import User from "./UserComponent";
 import NewComponent from "./NewComponent";
-
+import{BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {render} from "react-dom";
 import {Provider} from "react-redux";
 import store from "./store";
@@ -33,16 +33,27 @@ class App extends React.Component{//state
         console.log("Parent Rendering");
         let myvar = true;
         return(//JSX : Javascript XML
-            <div>          
-                <Header/>                
-                {myvar ? <Body/> : ""}
-                <User greetFunc={this.greetMe} prp3={this.state.parentprop}/>
-                <Ftr display={true} msg={"Message from Index Page"}/>
-                <hr/>
-                <button onClick={() => this.updateProp()}>Update Parent Props</button>
-                <hr/>
-                <NewComponent/>
-            </div>            
+            <div>
+                <Router>
+                    <div>                            
+                        <Header>
+                            <h1>{"First Child From Home"}</h1>    
+                            <h2>{"Second Child From Home"}</h2>    
+                        </Header>                
+                        <Switch>                             
+                            <Route path="/user" exact component={User}/>
+                            <Route path="/new" component={NewComponent}/>
+                            <Route path="*" component={Body}/>
+                            {/* <User greetFunc={this.greetMe} prp3={this.state.parentprop}/>*/}
+                        </Switch>                        
+                        <Ftr display={true} msg={"This is Footer Component"} />
+                        {/* <hr/>
+                            <button onClick={() => this.updateProp()}>Update Parent Props</button>
+                        <hr/> */}
+                    </div>  
+                </Router>   
+            </div>  
+
         )
     }
 }

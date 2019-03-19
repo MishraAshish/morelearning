@@ -1,12 +1,14 @@
+import {NavLink} from "react-router-dom";
 import React from "react";
 //functional or stateless components
-const Header = () => {
-    let header = "First Header";
-    let title = "Headers are important in a web page";
+const Header = (props) => {
+    var props = props;    
     return(
         <div>
-            <h1>{header}</h1>
-            <h2>{title}</h2>
+            <h1>{props.children[0]}</h1>
+            <h2>{props.children[1]}</h2>
+            <NavLink to="/user" activeClassName="red"> {"GoToUser"} </NavLink>
+            <NavLink to="/new" activeClassName="red">{"GoToNewComponent"} </NavLink>
         </div>
     )
 }
