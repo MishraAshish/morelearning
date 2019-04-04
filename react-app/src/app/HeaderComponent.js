@@ -7,7 +7,7 @@ const Header = (props) => {
         <div>
             <h1>{props.children[0]}</h1>
             <h2>{props.children[1]}</h2>
-            <NavLink to="/user" activeClassName="red"> {"GoToUser"} </NavLink>
+            <NavLink to="/user/25" activeStyle={{color:"red"}} title={"USer File"}> {"GoToUser"} </NavLink>
             <NavLink to="/new" activeClassName="red">{"GoToNewComponent"} </NavLink>
         </div>
     )

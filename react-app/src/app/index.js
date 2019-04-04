@@ -41,7 +41,7 @@ class App extends React.Component{//state
                             <h2>{"Second Child From Home"}</h2>    
                         </Header>                
                         <Switch>                             
-                            <Route path="/user" exact component={User}/>
+                            <Route path="/user/:id" exact component={User}/>
                             <Route path="/new" component={NewComponent}/>
                             <Route path="*" component={Body}/>
                             {/* <User greetFunc={this.greetMe} prp3={this.state.parentprop}/>*/}

@@ -20,6 +20,7 @@ class NewComponent extends Component{
         console.log("We are setting focus on call!");
         this.textInput.current.focus();
         this.textInput.current.value = "TestMe";
+        this.props.history.push('/user/1046?test=30')
     }
 
     render(){
@@ -32,6 +33,7 @@ class NewComponent extends Component{
                 <hr/>
 
                 <p>This is Your Changed Age : {this.props.user.age} </p>
+                
                 <button className="btn btn-primary" onClick={() => this.props.setAge(25)}>ChangeUserAge</button>
 
                 <hr/>

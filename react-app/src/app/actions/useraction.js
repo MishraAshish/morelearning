@@ -37,7 +37,7 @@ export function setName(name){
                         // want to updatePath for the route here:
                         //dispatch(updatePath('/'));
                         json ?
-                            resolve(json[0]["Name"]) : "Please run api";
+                            resolve(json[4]["Name"]) : "Please run api";
                     })
                     .catch(error => {
                         reject(error);

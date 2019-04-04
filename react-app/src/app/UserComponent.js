@@ -6,6 +6,7 @@ export default class User extends React.Component{
         //props: immutable should not change
         this.title = "We are in User Component";
         this.state = {
+            hasError: true,
             Name: "Kar",
             Age:22,
             Country : "United States",
@@ -13,7 +14,9 @@ export default class User extends React.Component{
             //City : props.City ? props.City: "New York",
             //Items: props.Items
         } 
-        console.log("Constructor Initialized");      
+        console.log("Constructor Initialized : ",this.props.match.params["id"]);
+        
+        console.log("Constructor Initialized QS : ",this.props.location.search);      
     }  
         
     componentWillMount(){
@@ -34,6 +37,16 @@ export default class User extends React.Component{
         //});//avoided
 
         console.log(this.state.Age);
+    }
+
+    updateState = (value) => {
+        
+        this.state.Show = false;
+
+        this.setState({
+            Age : this.state.Age+number
+        })      
+        
     }
 
     onHandleChange = (event) => {        
@@ -89,7 +102,7 @@ export default class User extends React.Component{
         console.log(this.state.Age == 22 ? "Child Rendering" : "Child Re-Rendering");     
         return(            
             <div>
-                <hr></hr>
+                <hr onClick={() => this.updateState(false)}>{this.state.Show}</hr>
                 {/* <Component City={props.City} CityLocal={this.state.City}/> */}
                 <h4>{this.title}</h4>
                 <div className="col-sm-6">
